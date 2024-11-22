@@ -1,9 +1,6 @@
 <!-- <p>vehicle works!</p> -->
-
 <h1>Vehicle component</h1>
-
 <input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()" />
-
 <!-- sorting -->
 <div class="header">
   <select name="" id="" [(ngModel)]="coulumnName">
@@ -36,7 +33,7 @@
   </select>
   <button class="btn btn-primary" (click)="pagination()">Pagination</button>
 </div>
-<table border="1" class="table table-dark">
+<table border="1" class="table table-dark table-bordered">
   <thead>
     <tr>
       <th>S.No</th>
