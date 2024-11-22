@@ -3,22 +3,31 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StudentIdCardService {
+  constructor(private _httpClient: HttpClient) {}
 
-  constructor(private _httpClient:HttpClient) {
+  getAllstudents(): Observable<any> {
+    return this._httpClient.get(
+      'https://6128991386a213001729f9df.mockapi.io/test/v1/student'
+    );
+  }
 
-   }
+  getFilteredStudentIdCards(searchWord: string): Observable<any> {
+    return this._httpClient.get(
+      'https://6128991386a213001729f9df.mockapi.io/test/v1/student?filter=' +
+        searchWord
+    );
+  }
 
-   getAllstudents():Observable<any>{
-    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student")
-   }
-
-   getFilteredStudentIdCards():Observable<any>{
-   return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student?filter="+)
-   }
-
-
+  getSortedStudentIdcards(columnName: string, order: string): Observable<any> {
+  return  this._httpClient.get(
+      'https://6128991386a213001729f9df.mockapi.io/test/v1/student?sortBy=' +
+        columnName +
+        '&order=' +
+        order
+    );
+  }
 
 }

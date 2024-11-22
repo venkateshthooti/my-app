@@ -1,28 +1,35 @@
 <div class="mainContainer">
-  <input type="text" placeholder="serarch" />
+  <input type="text" placeholder="serarch" [(ngModel)]="searchWord" (keyup)="filterComponent()" />
+
   <label for="">SortColumn</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
+  <select name="" id="" [(ngModel)]="coulumnName">
+    <option value="name">name</option>
+    <option value="phone">phone</option>
+    <option value="city">city</option>
+    <option value="dob">dob</option>
+    <option value="profile_picture">profile_picture</option>
+    <option value="email">email</option>
+    <option value="school_name">school_name</option>
+    <option value="school_city">school_city</option>
+    <option value="school_pin">school_pin</option>
+    <option value="id">id</option>
   </select>
   <label for="">sortOrder</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
+  <select name="" id="" [(ngModel)]="order">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  
   </select>
-  <button>Sort</button>
+  <button (click)="sortedComponent()" class="btn btn-primary">Sort</button>
 
-  <label for="">limit</label>
+  <label for="">limit :</label>
   <select name="" id="">
     <option value=""></option>
     <option value=""></option>
     <option value=""></option>
     <option value=""></option>
   </select>
-  <label for="">Page</label>
+  <label for="">PageNumber :</label>
   <select name="" id="">
     <option value=""></option>
     <option value=""></option>
@@ -32,10 +39,10 @@
 
   <div class="childContainer px-4 pt-2">
     <div class="cards card my-2 p-2" *ngFor="let student of students">
-      <img class="backImage" src="{{student.school_logo}}" alt="">
+      <img class="backImage" src="{{ student.school_logo }}" alt="" />
       <div class="row g-0">
         <div class="col-md-3">
-          <div class=" logoDiv mb-2">
+          <div class="logoDiv mb-2">
             <img
               src="{{ student.school_logo }}"
               class="img-fluid rounded-start"
@@ -51,21 +58,31 @@
           </div>
         </div>
 
-        <div class="col-md-9 ">
+        <div class="col-md-9">
           <div class="card-body">
-            <h4 class="mb-1 fw-bold titleColor ">{{ student.school_name| slice:0:20 }} </h4>           
-            <label for="" class="citylabel me-4"><b class="color">city : </b>{{student.school_city}}</label>
-            <label for=""> <b class="color">pincode : </b> <small>{{student.school_pin}}</small></label>
-            <hr class="my-1">
+            <h4 class="mb-1 fw-bold titleColor align-middle">
+              {{ student.school_name | slice : 0 : 20 }}
+            </h4>
+            <label for="" class="citylabel me-4"
+              ><b class="color">city : </b>{{ student.school_city }}</label
+            >
+            <label for="">
+              <b class="color">pincode : </b>
+              <small>{{ student.school_pin }}</small></label
+            >
+            <hr class="my-1" />
             <label for="" class="labels"><b class="color">Name : </b></label>
-            <label for="">{{ student.name }}</label><br>
+            <label for="">{{ student.name }}</label
+            ><br />
             <label for="" class="labels"><b class="color">Phone : </b></label>
-            <label for="" >{{ student.phone }}</label><br>
+            <label for="">{{ student.phone }}</label
+            ><br />
             <label for="" class="labels"><b class="color">Dob : </b></label>
-            <label for="">{{ student.dob | date}}</label><br>
+            <label for="">{{ student.dob | date }}</label
+            ><br />
             <label for="" class="labels"><b class="color">City : </b></label>
-            <label for="">{{ student.city }}</label><br>
-            
+            <label for="">{{ student.city }}</label
+            ><br />
           </div>
         </div>
         <div class="bottom d-flex justify-content-between">

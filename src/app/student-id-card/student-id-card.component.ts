@@ -10,6 +10,11 @@ export class StudentIdCardComponent {
 
   students:any=[];
 
+  searchWord:string="";
+  
+  coulumnName:string="";
+  order:string="";
+
   constructor(private _studentIdCardService:StudentIdCardService){
     _studentIdCardService.getAllstudents().subscribe(
       (data:any)=>{
@@ -22,12 +27,24 @@ export class StudentIdCardComponent {
 
   }
   filterComponent(){
-    this._studentIdCardService.getFilteredStudentIdCards().subscribe(
+    this._studentIdCardService.getFilteredStudentIdCards(this.searchWord).subscribe(
       (data:any)=>{
-        
-
+        this.students=data;
+      },
+      (err:any)=>{
+        alert("Internet server issue")
+      }
+    ) 
+  }
+  sortedComponent(){
+    this._studentIdCardService.getSortedStudentIdcards(this.coulumnName,this.order).subscribe(
+      (data:any)=>{
+        this.students=data;
+      },
+      (err:any)=>{
+        alert("Internet server error")
       }
     )
-    
+
   }
 }
