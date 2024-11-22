@@ -28,6 +28,7 @@ import { SocialProfilesComponent } from './social-profiles/social-profiles.compo
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CraeteAccountsComponent } from './craete-accounts/craete-accounts.component';
 import { StudentIdCardComponent } from './student-id-card/student-id-card.component';
+import { CreateStudentIdCardComponent } from './create-student-id-card/create-student-id-card.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -56,9 +57,11 @@ const routes: Routes = [
   {path:'social-profiles',component:SocialProfilesComponent},
   {path:'craeteVehicles',component:CreateVehicleComponent},
   {path:'createAccounts',component:CraeteAccountsComponent},
-  {path:'studentidcard',component:StudentIdCardComponent}
+  {path:'studentidcard',component:StudentIdCardComponent},
+  {path:'createIdcards',component:CreateStudentIdCardComponent}
 
 ]},
+
 {path:'',component:LoginComponent},
 {path:'**',component:PageNotFoundComponent}
 

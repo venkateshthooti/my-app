@@ -37,6 +37,8 @@
   </select>
   <button (click)="paginationComponent()" class="btn btn-success">pagination</button>
 
+  <button class="btn btn-dark" routerLink="../createIdcards">Craete new Id card</button>
+
   <div class="childContainer px-4 pt-2">
     <div class="cards card my-2 p-2" *ngFor="let student of students">
       <img class="backImage" src="{{ student.school_logo }}" alt="" />
