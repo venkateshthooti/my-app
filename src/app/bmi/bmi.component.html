@@ -1,0 +1,16 @@
+<!-- <p>bmi works!</p> -->
+
+<div class="bmiMainContainer">
+    <div class="childContainer">
+        <h2>BMI</h2>
+      <div class="inputsDiv">
+        <label for="">Height :</label>
+        <input class="inputs" type="number" [(ngModel)]="height" />
+        <label for="">Weight :</label>
+        <input class="inputs" type="number"[(ngModel)]="weight" />
+      </div>
+        <button [disabled]="!height || !weight" class="calcutationButtons" (click)="calcBMI()">Calculate</button>
+
+      <h3>Your BMI is :{{result}}</h3>
+    </div>
+  </div>

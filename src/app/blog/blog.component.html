@@ -1,0 +1,12 @@
+<!-- <p>blog works!</p> -->
+<div class="mainContainer pt-4 card ">
+  <div class="card-body shadow p-3 mb-3 ms-5 bg-body-tertiary rounded" *ngFor="let blog of blogs">   
+    <h5 class="card-title"><b>{{blog.title}}</b></h5>
+    <p>By <b>{{blog.author}}</b> | {{blog.date_published}}</p>
+    <blockquote class="card-text">{{blog.content}}</blockquote>
+    <!-- <p class="card-text">
+        {{blog.content}}
+    </p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>

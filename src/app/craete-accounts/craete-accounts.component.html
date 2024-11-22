@@ -1,0 +1,43 @@
+<!-- <p>craete-accounts works!</p> -->
+
+<form action="" [formGroup]="accountForm">
+    <label for="" >Account Name : </label>
+    <input type="text" placeholder="account_name" formControlName="account_name"><br>
+    
+    <label for="">Available balance : </label>
+    <input type="text" placeholder="available_balance" formControlName="available_balance"><br>
+
+    <label for="">Account Number : </label>
+    <input type="text" placeholder="account_number" formControlName="account_number"> <br>
+
+    <label for="">City : </label>
+    <input type="text" placeholder="city" formControlName="city"><br>
+
+    <label for="">Profile picture : </label>
+    <input type="text" placeholder="profie_picture" formControlName="profie_picture"><br>
+    <!-- <input type="text" placeholder="id" formControlName="id"> -->
+    <button (click)="submit()">submit</button>
+
+    
+    
+</form>
+
+
+
+
+<!-- <select name="" id="" [(ngModel)]="columnName">
+    <option value="account_name">account_name</option>
+    <option value="available_balance">available_balance</option>
+    <option value="account_number">account_number</option>
+    <option value="city">city</option>
+
+</select> -->
+<!-- <form action="" [formGroup]="updateForm">
+    <input type="text" placeholder="Enter Id " formControlName="id">
+    <input type="text" placeholder="updateValue" formControlName="account_name">
+    <button (click)="update()">Update</button>
+</form> -->
+
+<input type="text" placeholder="Enter Id " [(ngModel)]="id">
+    <input type="text" placeholder="updateValue" [(ngModel)]="account_name">
+    <button (click)="update()">Update</button>

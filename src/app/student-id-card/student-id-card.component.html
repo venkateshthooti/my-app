@@ -1,0 +1,56 @@
+<div class="mainContainer">
+  <input type="text" placeholder="serarch" />
+  <label for="">SortColumn</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  <label for="">sortOrder</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  <button>Sort</button>
+
+  <label for="">limit</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  <label for="">Page</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  <button>pagination</button>
+
+  <div class="childContainer px-4 pt-2">
+    <div class="cards card my-2 p-3" *ngFor="let student of students">
+      <div class="row g-0">
+        <div class="col-md-2">
+          <img src="..." class="img-fluid rounded-start" alt="..." />
+          <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="..." />
+            
+          </div>
+        </div>
+        
+        <div class="col-md-8">
+          <div class="card-body">
+            <label for="">{{ student.name }}</label>
+            <label for="">{{ student.phone }}</label>
+            <label for="">{{ student.dob }}</label>
+            <label for="">{{ student.city }}</label>
+            <label for="">{{ student.name }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

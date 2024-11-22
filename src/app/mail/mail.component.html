@@ -1,0 +1,10 @@
+<!-- <p>mail works!</p> -->
+ <div class="maincontainer">
+    <div class="childContainer" *ngFor="let mail of mails;let i=index" 
+    [ngClass]="{'thick':mail.completed==false,'lightColor':mail.completed==true}">
+        <label class="me-4 ms-2" >{{i+1}}</label>
+        <label  class="fw-bold">{{mail.title}}</label>
+
+
+    </div>
+ </div>

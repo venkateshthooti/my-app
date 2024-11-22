@@ -1,0 +1,19 @@
+<!-- <p>imdb-movies works!</p> -->
+<div class="mainContainer pt-4 card ">
+    <div class="card-body shadow-lg p-3 mb-3 ms-5 rounded cards" *ngFor="let movie of movies,let i=index">   
+      <h5 class="card-title text-warning"><b>{{movie.movie}}</b></h5>
+      <p class="text-white rating me-2">Rating : <b> {{movie.rating}}</b></p>
+      <span *ngFor="let item of [].constructor(getRating(movie.rating)); let i = index">
+        <img
+          src="https://img.freepik.com/free-vector/basic-star-flat-vector_78370-1483.jpg?t=st=1731987078~exp=1731990678~hmac=00eea7759f74d860c95f71b18a680f5de0693bd0b18476ebdeb1cf0ccc1ea2a1&w=740"
+          width="15px"
+          
+        />
+      </span><br>
+      <a href="{{movie.imdb_url}}" class="mt-3 py-1 btn btn-primary text-warning anchor border-warning" target="_blank">View on IMDB</a>
+      
+      
+    </div>
+  </div>
+
+  

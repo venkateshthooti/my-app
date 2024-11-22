@@ -1,0 +1,48 @@
+<!-- <p>pokemon-carousel works!</p> -->
+ <div id="carouselExample" class="mainContainer carousel slide" data-bs-ride="carousel">
+    
+    <div class="childContainer  carousel-inner w-100 h-100 " >
+       
+        <div class="carousel-item active  card  w-50 p-3 carouselDiv" *ngFor="let pokeman of pokemanDetails; let i=index" [class.active]="i===0">
+            <div class="imageAndLabels">
+            <img src="{{pokeman.image_url}}" class="d-block w-40" alt="...">      
+            <h3 >{{pokeman.pokemon}}</h3><br>
+            <label for=""><b>Type : </b>  {{pokeman.type}} </label><br>
+            <label for=""><b>Abilities : </b>  {{pokeman.abilities}} </label><br>
+            <label for=""><b>Hitpoints : </b>  {{pokeman.hitpoints}} </label><br>
+            <label for=""><b>Evolutions : </b>  {{pokeman.evolutions}} </label><br>
+            <label for=""><b>Location : </b>  {{pokeman.location}} </label><br>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>      
+    </div>
+ </div>
+
+ <!-- <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner" >
+      <div class="carousel-item " >
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->

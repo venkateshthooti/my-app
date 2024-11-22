@@ -1,0 +1,41 @@
+<!-- <p>weather works!</p> -->
+<div class="mainContainer">
+  <div class="childContainer">
+    <h2>Weather in Hyderabad</h2>
+    <div
+      class="circle"
+      *ngFor="let weather of weathers"
+      [ngClass]="{
+        blue: weather.current_weather.temperature < 0,
+        yellow:
+          weather.current_weather.temperature > 0 &&
+          weather.current_weather.temperature <= 30,
+        green:
+          weather.current_weather.temperature > 30 &&
+          weather.current_weather.temperature <= 35,
+        red: weather.current_weather.temperature > 35
+      }"
+    ></div>
+
+    <div  *ngFor="let weather of weathers">
+      <h1 class="temperature">
+        {{ weather.current_weather.temperature }}
+        {{ weather.current_weather_units.temperature }}
+      </h1>
+      <h5>
+        Wind Speed : {{ weather.current_weather.windspeed }}
+        {{ weather.current_weather_units.windspeed }}
+      </h5>
+      <h5>
+        Wind Direction : {{ weather.current_weather.winddirection }}
+        {{ weather.current_weather_units.winddirection }}
+      </h5>
+      <label class="dayOrNight" for="">{{
+        weather.current_weather.is_day == 1 ? "Day Time" : "Night Time"
+      }}</label>
+      <!-- <p>{{weather.current_weather.is_day==1?'Day':'Night'}}</p> -->
+      <p>{{ weather.current_weather.time | date : "medium" : "UTC+5:30" }}</p>
+    </div>
+  </div>
+</div>
+<!--   {{weather.current_weather.is_day==1?'day''night'}}  -->

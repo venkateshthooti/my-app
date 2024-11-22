@@ -1,0 +1,14 @@
+<!-- <p>circle works!</p> -->
+
+<div class="circleMainContainer">
+    <div class="childContainer">
+        <h2>CIRCLE</h2>
+      <div class="inputsDiv">
+        <label for="">Radius :</label>
+        <input class="inputs" type="number" [(ngModel)]="radius" />
+      </div>
+        <button [disabled]="!radius " class="calcutationButtons" (click)="calcArea()">Area</button>
+        <button [disabled]="!radius" class="calcutationButtons" (click)="calcPerimeter()">Perimeter</button>
+      <h3>Result : {{result}}</h3>
+    </div>
+  </div>

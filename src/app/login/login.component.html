@@ -1,0 +1,43 @@
+<!-- <p>login works!</p> -->
+
+<div class="mainContainer">
+  <!-- <div class="childContainer"> -->
+  <form action="" class="loginForm">
+    <div class="inputsDiv">
+      <!-- <label for="">Email :</label> -->
+      <input
+        class="inputs"
+        type="text" name="email"
+        placeholder="Enter your email..."
+        value=""
+        [(ngModel)]="email"
+      />
+    </div>
+    <div class="inputsDiv">
+      <!-- <label for="">Password :</label> -->
+      <input
+        class="inputs"
+        type="password" name="password"
+        placeholder="Enter your password..."
+        value=""
+        [(ngModel)]="password"
+      />
+    </div>
+    <div *ngIf="errorMessage">
+      <span class="error">{{ errorMessage }}</span>
+    </div>
+    <button
+      [disabled]="!email || !password"
+      class="loginButton"
+      type="submit"
+      (click)="loginValidation()"
+    >
+      Log in
+    </button>
+
+    <a href="">Forgot Password?</a>
+    <hr />
+    <button class="createAccountButton">Create new Account</button>
+  </form>
+  <!-- </div> -->
+</div>

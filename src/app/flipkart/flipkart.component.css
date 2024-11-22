@@ -1,0 +1,27 @@
+.mainContaner{
+    width: 100%;
+    height: 100%;
+
+}
+.titleDiv{
+    width: 100%;
+    /* background-color: red; */
+    text-align: center;
+    color: white;
+}
+.topContainer{
+    width: 100%;
+    height: 35%;
+    /* background-color: yellow; */
+    display: flex;
+    /* justify-content: space-between; */
+  
+}
+.leftContainer{
+    width: 68%;
+    /* background-color: green; */
+}
+
+.left{
+   
+}

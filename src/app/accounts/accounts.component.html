@@ -1,0 +1,73 @@
+<!-- <p>accounts works!</p> -->
+
+<input type="text" placeholder="search" [(ngModel)]="word" (keyup)="filterComponent()">
+<br>
+<select name="" id="" [(ngModel)]="columnName">
+    <option value="account_name">Account name</option>
+    <option value="available_balance">Available balance</option>
+    <option value="account_number">Account number</option>
+    <option value="city">City</option>
+    <option value="profie_picture">Profile Picture</option>
+    <option value="id">Id</option>
+    
+</select>
+<select name="" id="" [(ngModel)]="order">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+</select>
+<button class="btn btn-warning" (click)="sortComponent()">Sort</button>
+<br>
+<select name="" id="" [(ngModel)]="numberOfRows">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+    
+</select>
+<select name="" id="" [(ngModel)]="pages">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<button class="btn btn-success" (click)="paginationComponent()">Pagiantion</button>
+
+<!-- <input type="text" placeholder="account_name" [(ngModel)]="account_name">
+<input type="text" placeholder="available_balance" [(ngModel)]="available_balance">
+<input type="text" placeholder="account_number" [(ngModel)]="account_number">
+<input type="text" placeholder="city" [(ngModel)]="city">
+<input type="text" placeholder="profie_picture" [(ngModel)]="profie_picture">
+<input type="text" placeholder="id" [(ngModel)]="id">
+<button (click)="postComponent()">submit</button> -->
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+            <th>id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.city}}</td>
+            <td>
+                <img src="{{account.profie_picture}}" width="50px" height="50px" alt="">
+            </td>
+            <td>{{account.id}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteComponent(account.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
