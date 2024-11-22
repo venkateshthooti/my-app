@@ -1,9 +1,13 @@
 <!-- <p>vehicle works!</p> -->
-<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+
+<h1>Vehicle component</h1>
+
+<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()" />
 
 <!-- sorting -->
-<select name="" id="" [(ngModel)]="coulumnName">
-    <option value="Vehicle" >Vehicle</option>
+<div class="header">
+  <select name="" id="" [(ngModel)]="coulumnName">
+    <option value="Vehicle">Vehicle</option>
     <option value="manufacturer">manufacturer</option>
     <option value="model">model</option>
     <option value="type">type</option>
@@ -12,65 +16,61 @@
     <option value="image">image</option>
     <option value="cost">cost</option>
     <option value="id">id</option>
-
-</select>
-<select name="" id="" [(ngModel)]="order">
-    <option value="asc" >Ascending</option>
+  </select>
+  <select name="" id="" [(ngModel)]="order">
+    <option value="asc">Ascending</option>
     <option value="desc">Descending</option>
-</select>
-<button class="btn btn-warning" (click)="sorting()">sort</button>
+  </select>
+  <button class="btn btn-warning" (click)="sorting()">sort</button>
 
-<!-- pagiantion -->
-<select name="" id="" [(ngModel)]="limit">
+  <!-- pagiantion -->
+  <select name="" id="" [(ngModel)]="limit">
     <option value="10">10</option>
     <option value="20">20</option>
     <option value="50">50</option>
-</select>
-<select name="" id="" [(ngModel)]="pageNumber">
+  </select>
+  <select name="" id="" [(ngModel)]="pageNumber">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
-
-</select>
-<button class="btn btn-primary" (click)="pagination()">Pagination</button>
-
+  </select>
+  <button class="btn btn-primary" (click)="pagination()">Pagination</button>
+</div>
 <table border="1" class="table table-dark">
-    <thead>
-        <tr>
-            <th>S.No</th>
-            <th>Vehicle</th>
-            <th>manufacturer</th>
-            <th>model</th>
-            <th>type</th>
-            <th>fuel</th>
-            <th>color</th>
-            <th>image</th>
-            <th>cost</th>
-            <th>id</th>
-            <th>Delete</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        <tr *ngFor="let vehicle of vehicles;let i=index">
-            <td>{{i}}</td>
-            <td>{{vehicle.Vehicle}}</td>
-            <td>{{vehicle.manufacturer}}</td>
-            <td>{{vehicle.model}}</td>
-            <td>{{vehicle.type}}</td>
-            <td>{{vehicle.fuel}}</td>
-            <td>{{vehicle.color}}</td>
-            <td>
-                <img src="{{vehicle.image}}" alt="" width="100px">
-            </td>
-            <td>{{vehicle.cost}}</td>
-            <td>{{vehicle.id}}</td>
-            <td>
-                <button class="btn btn-danger" (click)="delete(vehicle.id)">Delete</button>
-            </td>
-        </tr>
-
-    </tbody>
-
-
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Vehicle</th>
+      <th>manufacturer</th>
+      <th>model</th>
+      <th>type</th>
+      <th>fuel</th>
+      <th>color</th>
+      <th>image</th>
+      <th>cost</th>
+      <th>id</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles; let i = index">
+      <td>{{ i }}</td>
+      <td>{{ vehicle.Vehicle }}</td>
+      <td>{{ vehicle.manufacturer }}</td>
+      <td>{{ vehicle.model }}</td>
+      <td>{{ vehicle.type }}</td>
+      <td>{{ vehicle.fuel }}</td>
+      <td>{{ vehicle.color }}</td>
+      <td>
+        <img src="{{ vehicle.image }}" alt="" width="100px" />
+      </td>
+      <td>{{ vehicle.cost }}</td>
+      <td>{{ vehicle.id }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(vehicle.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>
