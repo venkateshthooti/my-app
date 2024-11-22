@@ -23,19 +23,21 @@
   <button (click)="sortedComponent()" class="btn btn-primary">Sort</button>
 
   <label for="">limit :</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
+  <select name="" id="" [(ngModel)]="limit">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
   </select>
   <label for="">PageNumber :</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
+  <select name="" id="" [(ngModel)]="pageNumber">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
   </select>
-  <button>pagination</button>
+  <button (click)="paginationComponent()" class="btn btn-success">pagination</button>
+
+  <button class="btn btn-dark" routerLink="../createIdcards">Craete new Id card</button>
 
   <div class="childContainer px-4 pt-2">
     <div class="cards card my-2 p-2" *ngFor="let student of students">
@@ -71,8 +73,11 @@
               <small>{{ student.school_pin }}</small></label
             >
             <hr class="my-1" />
-            <label for="" class="labels"><b class="color">Name : </b></label>
+            <label for="" class="labels"><b class="color">Student Name : </b></label>
             <label for="">{{ student.name }}</label
+            ><br />
+            <label for="" class="labels"><b class="color">Student id : </b></label>
+            <label for="">{{ student.id }}</label
             ><br />
             <label for="" class="labels"><b class="color">Phone : </b></label>
             <label for="">{{ student.phone }}</label
@@ -88,7 +93,7 @@
         <div class="bottom d-flex justify-content-between">
           <button class="btn btn-primary">View</button>
           <button class="btn btn-warning">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button>
         </div>
       </div>
     </div>

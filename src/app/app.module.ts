@@ -32,7 +32,8 @@ import { PokemonCarouselComponent } from './pokemon-carousel/pokemon-carousel.co
 import { SocialProfilesComponent } from './social-profiles/social-profiles.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CraeteAccountsComponent } from './craete-accounts/craete-accounts.component';
-import { StudentIdCardComponent } from './student-id-card/student-id-card.component'
+import { StudentIdCardComponent } from './student-id-card/student-id-card.component';
+import { CreateStudentIdCardComponent } from './create-student-id-card/create-student-id-card.component'
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { StudentIdCardComponent } from './student-id-card/student-id-card.compon
     SocialProfilesComponent,
     CreateVehicleComponent,
     CraeteAccountsComponent,
-    StudentIdCardComponent
+    StudentIdCardComponent,
+    CreateStudentIdCardComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@
    
 }
 .labels{
-    width: 70px !important; 
+    width: 130px !important; 
 }
 
 .backImage{
@@ -61,4 +61,8 @@
     /* display: flex;
     justify-content: space-between; */
 }
+/* .btn:focus{
+
+    background-color: gray;
+} */
 
