@@ -31,24 +31,43 @@
   <button>pagination</button>
 
   <div class="childContainer px-4 pt-2">
-    <div class="cards card my-2 p-3" *ngFor="let student of students">
+    <div class="cards card my-2 p-2" *ngFor="let student of students">
       <div class="row g-0">
-        <div class="col-md-2">
-          <img src="..." class="img-fluid rounded-start" alt="..." />
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="..." />
+        <div class="col-md-3">
+          <div class=" logoDiv mb-2">
+            <img
+              src="{{ student.school_logo }}"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="profilePicDiv mb-2">
+            <img
+              src="{{ student.profile_picture }}"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="col-md-8 ">
+          <div class="card-body">
+            <h4 class="mb-0">{{ student.school_name| slice:0:20 }} </h4>
+            
+            <label for="" class="citylabel me-2"><b>city : </b>{{student.school_city}}</label>
+            <label for=""> <b>pincode : </b> <small>{{student.school_pin}}</small></label>
+            <hr class="my-0">
+            <label for=""><b>Name : </b>{{ student.name }}</label><br>
+            <label for=""><b>Phone : </b>{{ student.phone }}</label><br>
+            <label for=""><b>Dob : </b>{{ student.dob | date}}</label><br>
+            <label for=""><b>City : </b>{{ student.city }}</label><br>
             
           </div>
         </div>
-        
-        <div class="col-md-8">
-          <div class="card-body">
-            <label for="">{{ student.name }}</label>
-            <label for="">{{ student.phone }}</label>
-            <label for="">{{ student.dob }}</label>
-            <label for="">{{ student.city }}</label>
-            <label for="">{{ student.name }}</label>
-          </div>
+        <div class="bottom">
+          <button class="btn btn-primary">View</button>
+          <button class="btn btn-warning">Edit</button>
+          <button class="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>
