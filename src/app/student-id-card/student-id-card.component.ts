@@ -11,8 +11,6 @@ export class StudentIdCardComponent {
   students:any=[];
 
   constructor(private _studentIdCardService:StudentIdCardService){
-
-    console.log(this.students[0])
     _studentIdCardService.getAllstudents().subscribe(
       (data:any)=>{
           this.students=data
@@ -21,11 +19,15 @@ export class StudentIdCardComponent {
         alert("Internet server error")
       }
     )
-    console.log(this.students.name)
 
   }
-  // filterComponent(){
+  filterComponent(){
+    this._studentIdCardService.getFilteredStudentIdCards().subscribe(
+      (data:any)=>{
+        
 
+      }
+    )
     
-  // }
+  }
 }
