@@ -11,13 +11,18 @@ import { StudentIdCardService } from '../student-id-card.service';
 })
 export class CreateStudentIdCardComponent {
 
+  
+  constructor(private _studentIdCardService:StudentIdCardService){
+  
+  }
+
   public studenIdCardForm:FormGroup=new FormGroup(
     {
       name: new FormControl(),
       phone: new FormControl(),
       city: new FormControl(),
       dob: new FormControl(),
-      profie_picture: new FormControl(),
+      profile_picture: new FormControl(),
       email: new FormControl(),
       school_logo: new FormControl(),
       school_name: new FormControl(),
@@ -25,10 +30,9 @@ export class CreateStudentIdCardComponent {
       school_pin: new FormControl()
     }
   )
-  constructor(private _studentIdCardService:StudentIdCardService){
 
-  }
   createSudentIdComponent(){
+    console.log(this.studenIdCardForm)
     this._studentIdCardService.createStudentIdservice(this.studenIdCardForm.value).subscribe(
       (data:any)=>{
         alert("New id card creation successfull....!")

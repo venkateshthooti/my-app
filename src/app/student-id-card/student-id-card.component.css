@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .cards{
@@ -26,6 +26,9 @@
 .titleColor{
     color: skyblue
 }
+.headcolor{
+    color: skyblue;
+}
 .color{
     color: palevioletred;
    
@@ -40,13 +43,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.1;
+    opacity: 0.2;
 }
 .logoDiv img{
     width: 100%;
     height: 60%;
     border-radius: 50% !important;
     background-color:blueviolet;
+    z-index: 100;
 }
 .profilePicDiv img {
     border-radius: 0px 0px 0px 0px !important;
@@ -54,12 +58,23 @@
 }
 .card-body{
     padding: 0px 0px 10px 10px;
+    
 }
+.left{
+    z-index: 100;
+}
+.right{
+    z-index: 100;
+}
+
 
 .bottom{
     width: 100%;
     /* display: flex;
     justify-content: space-between; */
+}
+.btn{
+    z-index: 100;
 }
 /* .btn:focus{
 

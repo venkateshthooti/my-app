@@ -54,6 +54,7 @@ export class StudentIdCardComponent {
   }
 
   deleteComponent(id: number) {
+    console.log("delete enter")
     if (confirm('Are you sure you want to delete')) {
       this._studentIdCardService.deleteService(id).subscribe(
         (data: any) => {
@@ -74,5 +75,8 @@ export class StudentIdCardComponent {
         alert("pagination failed..!")
       }
     )
+  }
+  edit(){
+    alert("hi")
   }
 }
