@@ -41,35 +41,36 @@
 
   <div class="childContainer px-4 pt-2">
     <div class="cards card my-2 p-2" *ngFor="let student of students">
+      <!-- <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button> -->
       <img class="backImage" src="{{ student.school_logo }}" alt="" />
       <div class="row g-0">
-        <div class="col-md-3">
+        <div class="col-md-3 left">
           <div class="logoDiv mb-2">
             <img
               src="{{ student.school_logo }}"
               class="img-fluid rounded-start"
-              alt="..."
+              alt="not loaded"
             />
           </div>
           <div class="profilePicDiv mb-2">
             <img
               src="{{ student.profile_picture }}"
               class="img-fluid rounded-start"
-              alt="..."
+              alt="not noaded"
             />
           </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-9 right">
           <div class="card-body">
             <h4 class="mb-1 fw-bold titleColor align-middle">
               {{ student.school_name | slice : 0 : 20 }}
             </h4>
             <label for="" class="citylabel me-4"
-              ><b class="color">city : </b>{{ student.school_city }}</label
+              ><b class="headcolor">city : </b>{{ student.school_city }}</label
             >
             <label for="">
-              <b class="color">pincode : </b>
+              <b class="headcolor">pincode : </b>
               <small>{{ student.school_pin }}</small></label
             >
             <hr class="my-1" />
@@ -83,16 +84,17 @@
             <label for="">{{ student.phone }}</label
             ><br />
             <label for="" class="labels"><b class="color">Dob : </b></label>
-            <label for="">{{ student.dob | date }}</label
+            <label for="">{{ student.dob}}</label
             ><br />
             <label for="" class="labels"><b class="color">City : </b></label>
             <label for="">{{ student.city }}</label
             ><br />
+            <!-- <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button> -->
           </div>
         </div>
         <div class="bottom d-flex justify-content-between">
           <button class="btn btn-primary">View</button>
-          <button class="btn btn-warning">Edit</button>
+          <button class="btn btn-warning" (click)="edit()">Edit</button>
           <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button>
         </div>
       </div>
