@@ -29,6 +29,9 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { CraeteAccountsComponent } from './craete-accounts/craete-accounts.component';
 import { StudentIdCardComponent } from './student-id-card/student-id-card.component';
 import { CreateStudentIdCardComponent } from './create-student-id-card/create-student-id-card.component';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -58,7 +61,10 @@ const routes: Routes = [
   {path:'craeteVehicles',component:CreateVehicleComponent},
   {path:'createAccounts',component:CraeteAccountsComponent},
   {path:'studentidcard',component:StudentIdCardComponent},
-  {path:'createIdcards',component:CreateStudentIdCardComponent}
+  {path:'createIdcards',component:CreateStudentIdCardComponent},
+  {path:'angularPractice',component:AngularMaterialComponent},
+  {path:'bottomsheet',component:BottomSheetComponent},
+  {path:'createuser',component:CreateUserComponent}
 
 ]},
 
