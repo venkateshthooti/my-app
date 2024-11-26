@@ -1,0 +1,249 @@
+<div class="mainContainer">
+  <p>angular-material works!</p>
+
+  <h1>Hello</h1>
+
+  <!-- Toggle -->
+  <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+  <h1>Hello</h1>
+
+  <!-- slider -->
+  <mat-slider min="1" max="5" step="0.5">
+    <input matSliderThumb value="1.5" />
+  </mat-slider>
+  <br />
+
+  <!-- Auto complete -->
+  <button
+    mat-raised-button
+    color="accent"
+    matBadge="R"
+    matBadgePosition="after"
+    matBadgeColor="warn"
+  >
+    Action
+  </button>
+  <!-- Badge -->
+  <div class="demo-section">
+    Icon with a badge
+    <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+    <!-- Include text description of the icon's meaning for screen-readers -->
+    <span class="cdk-visually-hidden">
+      Example with a home icon with overlaid badge showing the number 15
+    </span>
+  </div>
+
+  <!-- Bottom  sheet -->
+  <p>You have received a file called "cat-picture.jpeg".</p>
+
+  <button mat-raised-button (click)="openBottomSheet()">Open file</button>
+
+  <!-- buttons -->
+
+  <section>
+    <div class="example-label">Basic</div>
+    <div class="example-button-row">
+      <button mat-button>Basic</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Warn</button>
+      <button mat-button disabled>Disabled</button>
+      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="example-label">Raised</div>
+    <div class="example-button-row">
+      <button mat-raised-button>Basic</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button href="https://www.google.com/" target="_blank"
+        >Link</a
+      >
+    </div>
+  </section>
+
+  <section>
+    <div class="example-label">Stroked</div>
+    <div class="example-button-row">
+      <button mat-stroked-button>Basic</button>
+      <button mat-stroked-button color="primary">Primary</button>
+      <button mat-stroked-button color="accent">Accent</button>
+      <button mat-stroked-button color="warn">Warn</button>
+      <button mat-stroked-button disabled>Disabled</button>
+      <a mat-stroked-button href="https://www.google.com/" target="_blank"
+        >Link</a
+      >
+    </div>
+  </section>
+
+  <!-- button toggle -->
+
+  <h1>Button group or Button toggle</h1>
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <!-- card -->
+
+  <mat-card>
+    <mat-card-content>Simple card</mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>header card</mat-card-header>
+  </mat-card>
+
+  <mat-card-title-group
+    >card group
+    <mat-card-title>card title</mat-card-title>
+    <mat-card-subtitle>card subtitle</mat-card-subtitle>
+    <img mat-card-sm-image />
+  </mat-card-title-group>
+
+  <!-- check box -->
+  <section class="example-section">
+    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+    <mat-checkbox class="example-margin" [disabled]="true"
+      >Disabled</mat-checkbox
+    >
+  </section>
+
+  <section class="example-section">
+    <span class="example-list-section">
+      <mat-checkbox
+        class="example-margin"
+        [checked]="allComplete"
+        [color]="task.color"
+        [indeterminate]="someComplete()"
+        (change)="setAll($event.checked)"
+      >
+        {{ task.name }}
+      </mat-checkbox>
+    </span>
+    <span class="example-list-section">
+      <ul>
+        <li *ngFor="let subtask of task.subtasks">
+          <mat-checkbox
+            [(ngModel)]="subtask.completed"
+            [color]="subtask.color"
+            (ngModelChange)="updateAllComplete()"
+          >
+            {{ subtask.name }}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <!-- Chips -->
+
+  <mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option>One fish</mat-chip-option>
+    <mat-chip-option>Two fish</mat-chip-option>
+    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+    <mat-chip-option color="warn">Warn fish</mat-chip-option>
+  </mat-chip-listbox>
+
+  <!-- DIALOG BOX -->
+  <!-- <ol>
+    <li>
+      <mat-form-field appearance="fill">
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick one</button>
+    </li>
+    <li *ngIf="animal">
+      You chose: <i>{{animal}}</i>
+    </li>
+  </ol> -->
+
+  <button mat-raised-button (click)="openDialog()">Pick one</button>
+
+  <!-- DEVIDER like hr tag -->
+
+  <h1>before</h1>
+  <mat-divider></mat-divider>
+  <h1>after/h1></h1>
+
+  <h1>Accordian or expansion pannel</h1>
+  <!-- expansion pannel like accordian -->
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  
+  <h1>table</h1>
+<!-- Table -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+
+
+
+
+
+
+
+</div>

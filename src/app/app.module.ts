@@ -33,7 +33,25 @@ import { SocialProfilesComponent } from './social-profiles/social-profiles.compo
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CraeteAccountsComponent } from './craete-accounts/craete-accounts.component';
 import { StudentIdCardComponent } from './student-id-card/student-id-card.component';
-import { CreateStudentIdCardComponent } from './create-student-id-card/create-student-id-card.component'
+import { CreateStudentIdCardComponent } from './create-student-id-card/create-student-id-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCommonModule} from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -66,14 +84,36 @@ import { CreateStudentIdCardComponent } from './create-student-id-card/create-st
     CreateVehicleComponent,
     CraeteAccountsComponent,
     StudentIdCardComponent,
-    CreateStudentIdCardComponent
+    CreateStudentIdCardComponent,
+    AngularMaterialComponent,
+    BottomSheetComponent,
+    CreateUserComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatCommonModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatTableModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,10 +24,10 @@
     position: relative;
 }
 .titleColor{
-    color: skyblue
+    color: rgb(79, 79, 255);
 }
 .headcolor{
-    color: skyblue;
+    color: rgb(17, 169, 230);
 }
 .color{
     color: palevioletred;
@@ -38,12 +38,16 @@
 }
 
 .backImage{
-    width: 100%;
+    /* width: 100%; */
+    width: 65%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0.2;
+    border-radius: 50%;
+    margin-left: 120px;
+
 }
 .logoDiv img{
     width: 100%;
@@ -57,8 +61,11 @@
     height: 100px;
 }
 .card-body{
-    padding: 0px 0px 10px 10px;
+    padding: 0px 10px 10px 10px;
     
+}
+h4{
+    text-align: center;
 }
 .left{
     z-index: 100;

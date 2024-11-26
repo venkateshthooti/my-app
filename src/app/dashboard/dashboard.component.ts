@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  logOutComponent(){
+
+    if (confirm("Are you sure you want to logout")){
+
+    }
+    alert("are you sure")
+  }
+
 }

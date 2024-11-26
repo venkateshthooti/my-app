@@ -56,7 +56,7 @@
             <img
               src="{{ student.profile_picture }}"
               class="img-fluid rounded-start"
-              alt="not noaded"
+              alt="not loaded"
             />
           </div>
         </div>
@@ -67,7 +67,7 @@
               {{ student.school_name | slice : 0 : 20 }}
             </h4>
             <label for="" class="citylabel me-4"
-              ><b class="headcolor">city : </b>{{ student.school_city }}</label
+              ><b class="headcolor">city : </b>{{ student.school_city | slice:0:10 }}</label
             >
             <label for="">
               <b class="headcolor">pincode : </b>
@@ -81,10 +81,10 @@
             <label for="">{{ student.id }}</label
             ><br />
             <label for="" class="labels"><b class="color">Phone : </b></label>
-            <label for="">{{ student.phone }}</label
+            <label for="">{{ student.phone}}</label
             ><br />
             <label for="" class="labels"><b class="color">Dob : </b></label>
-            <label for="">{{ student.dob}}</label
+            <label for="">{{ student.dob | date}}</label
             ><br />
             <label for="" class="labels"><b class="color">City : </b></label>
             <label for="">{{ student.city }}</label
@@ -92,6 +92,7 @@
             <!-- <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button> -->
           </div>
         </div>
+        <hr>
         <div class="bottom d-flex justify-content-between">
           <button class="btn btn-primary">View</button>
           <button class="btn btn-warning" (click)="edit()">Edit</button>
