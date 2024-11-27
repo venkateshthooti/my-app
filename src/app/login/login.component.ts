@@ -41,6 +41,10 @@ export class LoginComponent {
     this._loginService.loginService(this.loginForm.value).subscribe(
       (data:any)=>{
         alert("Login succesfully")
+        // this.router.navigate(['/dashboard']);
+        this.router.navigateByUrl('/dashboard');
+        sessionStorage.setItem('token',data.token)
+        
       },
       (err:any)=>{
         alert("invalid credential")

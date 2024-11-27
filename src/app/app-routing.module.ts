@@ -33,10 +33,11 @@ import { AngularMaterialComponent } from './angular-material/angular-material.co
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
-{path:'dashboard',component:DashboardComponent,children:[
+{path:'dashboard',canActivate:[AuthenticationGuard],component:DashboardComponent,children:[
   {path:'home',component:HomeComponent},
   {path:'welcome',component:WelcomeComponent},
   {path:'calculator',component:CalculatorComponent},
