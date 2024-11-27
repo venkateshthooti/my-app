@@ -36,7 +36,7 @@ export class CreateUserComponent {
   addCard(){
     this.cardsFormarray.push(
       new FormGroup({
-        cardNumber:new FormControl(),
+        cardNumber:new FormControl('',[Validators.required]),
         expiry:new FormControl(),
         cvv:new FormControl()
       })
@@ -47,17 +47,15 @@ export class CreateUserComponent {
     this.cardsFormarray.removeAt(num);
   }
 
-
-
   constructor(){
     this.userForm.get('type')?.valueChanges.subscribe(
       (data:any)=>{
 
         if(data=='dayscholor'){
           this.userForm.addControl('busFee',new FormControl())
-          this.userForm.removeControl('hostelFee')
-        }else{;
-          this.userForm.addControl('hostelFee',new FormControl);
+          this.userForm.removeControl('hostelFee');
+        }else{
+          this.userForm.addControl('hostelFee',new FormControl());
           this.userForm.removeControl('busFee')
         }
 
