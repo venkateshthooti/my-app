@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
     }
   )
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private _loginService:LoginService) {
 
   }
   ngOnInit(): void {
@@ -36,5 +37,14 @@ export class LoginComponent {
   // }
   login(){
     console.log(this.loginForm)
+
+    this._loginService.loginService(this.loginForm.value).subscribe(
+      (data:any)=>{
+        alert("Login succesfully")
+      },
+      (err:any)=>{
+        alert("invalid credential")
+      }
+    )
   }
 }

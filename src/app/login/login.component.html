@@ -44,33 +44,32 @@
   </div>
 </div> -->
 
+<div class="mainContainer">
+  <form action="" class="loginForm" [formGroup]="loginForm">
+    <div class="inputsDiv">
+      <input
+        class="inputs"
+        type="text"
+        name="email"
+        placeholder="Enter your email..."
+        formControlName="email"
+      />
+    </div>
 
+    <div class="inputsDiv">
+      <input
+        class="inputs"
+        type="password"
+        name="password"
+        placeholder="Enter your password..."
+        formControlName="password"
+      />
+    </div>
 
-<form action="" class="loginForm" [formGroup]="loginForm">
-  <div class="inputsDiv">
-    
-    <input
-      class="inputs"
-      type="text" name="email"
-      placeholder="Enter your email..."
-      formControlName="email"
-    />
-  </div>
-  
-  <div class="inputsDiv">
-    
-    <input
-      class="inputs"
-      type="password" name="password"
-      placeholder="Enter your password..."
-   
-      formControlName="password"
-    />
-  </div>
- 
-   <button (click)="login()">login</button>
+    <button  class="loginButton" (click)="login()">login</button>
 
-  <a href="">Forgot Password?</a>
-  <hr />
-  <button class="createAccountButton">Create new Account</button>
-</form>
+    <a href="">Forgot Password?</a>
+    <hr />
+    <button class="createAccountButton">Create new Account</button>
+  </form>
+</div>
