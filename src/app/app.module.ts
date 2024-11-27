@@ -52,6 +52,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     AngularMaterialComponent,
     BottomSheetComponent,
     CreateUserComponent,
+    CreateStudentformComponent,
     
     
   ],

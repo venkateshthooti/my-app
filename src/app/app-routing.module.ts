@@ -32,6 +32,7 @@ import { CreateStudentIdCardComponent } from './create-student-id-card/create-st
 import { AngularMaterialComponent } from './angular-material/angular-material.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -64,7 +65,8 @@ const routes: Routes = [
   {path:'createIdcards',component:CreateStudentIdCardComponent},
   {path:'angularPractice',component:AngularMaterialComponent},
   {path:'bottomsheet',component:BottomSheetComponent},
-  {path:'createuser',component:CreateUserComponent}
+  {path:'createuser',component:CreateUserComponent},
+  {path:'studentForm',component:CreateStudentformComponent}
 
 ]},
 
