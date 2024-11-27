@@ -1,10 +1,10 @@
 <!-- <p>login works!</p> -->
 
-<div class="mainContainer">
-  <!-- <div class="childContainer"> -->
-  <form action="" class="loginForm">
+<!-- <div class="mainContainer">
+  <div class="childContainer">
+  <form action="" class="loginForm" [formGroup]="loginForm">
     <div class="inputsDiv">
-      <!-- <label for="">Email :</label> -->
+      <label for="">Email :</label>
       <input
         class="inputs"
         type="text" name="email"
@@ -13,19 +13,22 @@
         [(ngModel)]="email"
       />
     </div>
+    
     <div class="inputsDiv">
-      <!-- <label for="">Password :</label> -->
+      <label for="">Password :</label>
       <input
         class="inputs"
         type="password" name="password"
         placeholder="Enter your password..."
         value=""
+        
         [(ngModel)]="password"
       />
     </div>
+    
     <div *ngIf="errorMessage">
       <span class="error">{{ errorMessage }}</span>
-    </div>
+    </div> 
     <button
       [disabled]="!email || !password"
       class="loginButton"
@@ -34,10 +37,39 @@
     >
       Log in
     </button>
+    <a href="">Forgot Password?</a>
+    <hr />
+    <button class="createAccountButton">Create new Account</button>
+  </form>
+  </div>
+</div> -->
+
+<div class="mainContainer">
+  <form action="" class="loginForm" [formGroup]="loginForm">
+    <div class="inputsDiv">
+      <input
+        class="inputs"
+        type="text"
+        name="email"
+        placeholder="Enter your email..."
+        formControlName="email"
+      />
+    </div>
+
+    <div class="inputsDiv">
+      <input
+        class="inputs"
+        type="password"
+        name="password"
+        placeholder="Enter your password..."
+        formControlName="password"
+      />
+    </div>
+
+    <button  class="loginButton" (click)="login()">login</button>
 
     <a href="">Forgot Password?</a>
     <hr />
     <button class="createAccountButton">Create new Account</button>
   </form>
-  <!-- </div> -->
 </div>

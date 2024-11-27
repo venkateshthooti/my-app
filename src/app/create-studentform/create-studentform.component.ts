@@ -23,7 +23,7 @@ export class CreateStudentformComponent {
           addressLine: new FormControl(),
           city:new FormControl(),
           state: new FormControl(),
-          pincode:new  FormControl('',[Validators.required,Validators.min(6),Validators.min(6)]),
+          pincode:new  FormControl('',[Validators.required,Validators.min(100000),Validators.min(999999)]),
       }
     ),
       marks: new FormArray([]),
