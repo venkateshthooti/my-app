@@ -43,7 +43,7 @@ export class LoginComponent {
         alert("Login succesfully")
         // this.router.navigate(['/dashboard']);
         this.router.navigateByUrl('/dashboard');
-        sessionStorage.setItem('token',data.token)
+        sessionStorage.setItem('token',data.token);
         
       },
       (err:any)=>{

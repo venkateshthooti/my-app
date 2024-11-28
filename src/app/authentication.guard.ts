@@ -28,7 +28,7 @@ export class AuthenticationGuard implements CanActivate {
     } else {
 
       alert("You need to login first")
-      this._router.navigateByUrl('./login')
+      this._router.navigateByUrl('/login')
       return false;
     }
   }
