@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -9,8 +10,22 @@ import { VehicleService } from '../vehicle.service';
 })
 export class CreateVehicleComponent {
 
-  constructor( private _vehicleService:VehicleService){
+  id:string="";
+  constructor( private _vehicleService:VehicleService, _activatedRoute:ActivatedRoute){
+    _activatedRoute.params.subscribe(
+      (data:any)=>{
+        console.log(data)
+        this.id=data.id
 
+        _vehicleService.getPerticularVehicle(data.id).subscribe(
+          (data:any)=>{
+            this.vehicleForm.patchValue(data)
+          }
+        )
+
+      }
+      
+    )
   }
 
   public vehicleForm:FormGroup=new FormGroup(
@@ -30,6 +45,18 @@ export class CreateVehicleComponent {
 
   submit(){
     console.log(this.vehicleForm)
+  if(this.id){
+    this._vehicleService.updateVehicle(this.id,this.vehicleForm.value).subscribe(
+      (data:any)=>{
+        console.log(data)
+        alert("Updated successfully")
+      },
+      (err:any)=>{
+        alert("Updation failed")
+      }
+    )
+
+  }else{
     this._vehicleService.createVehicleService(this.vehicleForm.value).subscribe(
       (data:any)=>{
         alert("Created Successfully....!")
@@ -39,6 +66,7 @@ export class CreateVehicleComponent {
       }
     )
 
+  }
   }
 
 

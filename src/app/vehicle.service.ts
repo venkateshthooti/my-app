@@ -6,40 +6,51 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class VehicleService {
+
+  baseUrl:string="https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction"
+
   constructor(private _httpClient: HttpClient) {}
 
   getVehicles(): Observable<any> {
     return this._httpClient.get(
-      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction'
+      this.baseUrl
     );
   }
   getFilteredVehiclesService(term: string): Observable<any> {
     return this._httpClient.get(
-      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?filter=' +
+      this.baseUrl+'?filter=' +
         term
     );
   }
   getSortedVehiclesService(column: string, order: string): Observable<any> {
     return this._httpClient.get(
-      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?sortBy=' +
+      this.baseUrl+'?sortBy=' +
         column +
         '&order=' +
         order
     );
   }
   deleteVehicle(id:string):Observable<any>{
-    return this._httpClient.delete('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+id)
+    return this._httpClient.delete(this.baseUrl+'/'+id)
   }
 
 
   getPagevehicles(limit:number,page:number):Observable<any>{
-    return this._httpClient.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?limit='+limit+"&page="+page)
+    return this._httpClient.get(this.baseUrl+'?limit='+limit+"&page="+page)
   }
 
   createVehicleService(data:any):Observable<any>{
 
-    return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction",data);
+    return this._httpClient.post(this.baseUrl,data);
 
+  }
+
+
+  getPerticularVehicle(id:string):Observable<any>{
+    return this._httpClient.get(this.baseUrl+"/"+id)
+  }
+  updateVehicle(id:string,data:any):Observable<any>{
+    return this._httpClient.put(this.baseUrl+"/"+id,data)
   }
 
 
