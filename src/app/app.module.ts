@@ -53,6 +53,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { CreateStudentformComponent } from './create-studentform/create-studentf
     BottomSheetComponent,
     CreateUserComponent,
     CreateStudentformComponent,
+    VehicleDetailsComponent,
     
     
   ],

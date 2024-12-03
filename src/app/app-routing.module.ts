@@ -34,6 +34,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -67,7 +68,9 @@ const routes: Routes = [
   {path:'angularPractice',component:AngularMaterialComponent},
   {path:'bottomsheet',component:BottomSheetComponent},
   {path:'createuser',component:CreateUserComponent},
-  {path:'studentForm',component:CreateStudentformComponent}
+  {path:'studentForm',component:CreateStudentformComponent},
+  {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+  {path:'edit-vehicle/:id',component:CreateVehicleComponent}
 
 ]},
 
