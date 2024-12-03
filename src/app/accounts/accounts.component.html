@@ -52,21 +52,24 @@
             <th>city</th>
             <th>profie_picture</th>
             <th>id</th>
+            <th>delete</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let account of accounts;let i=index">
-            <td>{{i+1}}</td>
-            <td>{{account.account_name}}</td>
-            <td>{{account.available_balance}}</td>
-            <td>{{account.account_number}}</td>
-            <td>{{account.city}}</td>
-            <td>
-                <img src="{{account.profie_picture}}" width="50px" height="50px" alt="">
+            <td class="align-middle text-center">{{i+1}}</td>
+            <td class="align-middle text-center">{{account.account_name}}</td>
+            <td class="align-middle text-center">{{account.available_balance}}</td>
+            <td class="align-middle text-center">{{account.account_number}}</td>
+            <td class="align-middle text-center">{{account.city}}</td>
+            <td class="align-middle text-center">
+                <img src="{{account.profie_picture}}" width="100px" height="100px" alt="">
             </td>
-            <td>{{account.id}}</td>
-            <td>
+            <td class="align-middle text-center">{{account.id}}</td>
+            <td class="align-middle text-center">
                 <button class="btn btn-danger" (click)="deleteComponent(account.id)">Delete</button>
+                <button class="btn btn-success" routerLink="/dashboard/account-details/{{account.id}}" >View</button>
+                <button class="btn btn-info" routerLink="/dashboard/update-details/{{account.id}}">Update</button>
             </td>
         </tr>
     </tbody>
