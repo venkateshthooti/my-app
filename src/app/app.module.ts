@@ -54,6 +54,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     CreateUserComponent,
     CreateStudentformComponent,
     VehicleDetailsComponent,
+    AccountDetailsComponent,
     
     
   ],

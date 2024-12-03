@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AccountsService {
 
+  baseUrl:string="https://6128991386a213001729f9df.mockapi.io/test/v1/principals"
   constructor(private _httpClient:HttpClient) { 
 
   }
@@ -53,6 +54,14 @@ export class AccountsService {
   // updateAcountService(id:string,updatedAccount:any):Observable<any>{
   //   return this._httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/principals/"+id+','+updatedAccount)
   // }
+
+
+  getPerticularAccount(id:string):Observable<any>{
+    return this._httpClient.get(this.baseUrl+'/'+id);
+  }
+  updateAccount(id:string,data:any):Observable<any>{
+    return this._httpClient.put(this.baseUrl+'/'+id,data)
+  }
 
 
 

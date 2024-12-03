@@ -50,27 +50,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let vehicle of vehicles; let i = index">
-      <td>{{ i }}</td>
-      <td>{{ vehicle.Vehicle }}</td>
-      <td>{{ vehicle.manufacturer }}</td>
-      <td>{{ vehicle.model }}</td>
-      <td>{{ vehicle.type }}</td>
-      <td>{{ vehicle.fuel }}</td>
-      <td>{{ vehicle.color }}</td>
-      <td>
-        <img src="{{ vehicle.image }}" alt="" width="100px" />
-      </td>
-      <td>{{ vehicle.cost }}</td>
-      <td>{{ vehicle.id }}</td>
-      <td>
-        <button class="btn btn-danger" (click)="delete(vehicle.id)">
-          Delete
-        </button>
-
-        <button class="btn btn-warning"  routerLink="/dashboard/vehicle-details/{{vehicle.id }}">
-          View
-        </button>
+    <tr  *ngFor="let vehicle of vehicles; let i = index">
+      <td class="align-middle text-center">{{ i }}</td>
+      <td class="align-middle text-center">{{ vehicle.Vehicle }}</td>
+      <td class="align-middle text-center">{{ vehicle.manufacturer }}</td>
+      <td class="align-middle text-center">{{ vehicle.model }}</td>
+      <td class="align-middle text-center">{{ vehicle.type }}</td>
+      <td class="align-middle text-center">{{ vehicle.fuel }}</td>
+      <td class="align-middle text-center">{{ vehicle.color }}</td>
+      <td class="align-middle text-center">
+        <img src="{{ vehicle.image }}" alt="" width="50px" height="50px"/>
+      </td >
+      <td class="align-middle text-center">{{ vehicle.cost }}</td>
+      <td class="align-middle text-center">{{ vehicle.id }}</td>
+      <td class="align-middle d-flex">
+        <button class="btn btn-danger " (click)="delete(vehicle.id)">Delete</button>
+        <button class="btn btn-warning"  routerLink="/dashboard/vehicle-details/{{vehicle.id }}">View</button>
         <button class="btn btn-info" routerLink="/dashboard/edit-vehicle/{{vehicle.id }}">Edit</button>
       </td>
     </tr>

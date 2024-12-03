@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountsService } from '../accounts.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-craete-accounts',
@@ -9,10 +10,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CraeteAccountsComponent {
 
- id:string="";
- account_name:string="";
- updatedAccount:any=[]
+//  id:string="";
+//  account_name:string="";
+//  updatedAccount:any=[]
 
+
+  uniqueID:string=""
   columnName:string=""
   public updateForm:FormGroup=new FormGroup(
     {
@@ -21,11 +24,6 @@ export class CraeteAccountsComponent {
     }
   )
  
-
-
-
-
-  
 
   public accountForm:FormGroup=new FormGroup(
     {
@@ -37,20 +35,45 @@ export class CraeteAccountsComponent {
       // account_name:new FormControl();
     }
   )
-  constructor(private _accountsService:AccountsService){
+  constructor(private _accountsService:AccountsService,_activatedRoute:ActivatedRoute){
 
-  }
+    _activatedRoute.params.subscribe(
+      (data:any)=>{
+        this.uniqueID=data.id
+        _accountsService.getPerticularAccount(data.id).subscribe(
+          (data:any)=>{
+            this.accountForm.patchValue(data)
+          }
+        )
+      }
+        )
+    }
+  
   submit(){
     console.log(this.accountForm)
-    this._accountsService.createPostAccountService(this.accountForm.value).subscribe(
-      (data:any)=>{
-        alert("Created successfully...!")
-      },
-      (err:any)=>{
-        alert("Creation failed...!")
-      }
-      
-    )
+
+    if(this.uniqueID){
+      this._accountsService.updateAccount(this.uniqueID,this.accountForm.value).subscribe(
+        (data:any)=>{
+          alert("updated successfully")
+        },
+        (err:any)=>{
+          alert("upadation failed")
+        }
+      )
+    }else{
+      this._accountsService.createPostAccountService(this.accountForm.value).subscribe(
+        (data:any)=>{
+          alert("Created successfully...!")
+        },
+        (err:any)=>{
+          alert("Creation failed...!")
+        }
+        
+      )
+  
+
+    }
 
   }
 
@@ -58,18 +81,18 @@ export class CraeteAccountsComponent {
 
 
 
-  update(){
-    this.updatedAccount.id=this.id
-    this.updatedAccount.account_name=this.account_name;
+  // update(){
+  //   this.updatedAccount.id=this.id
+  //   this.updatedAccount.account_name=this.account_name;
 
-    // this._accountsService.updateAcountService(this.id,this.updatedAccount).subscribe(
-    //   (data:any)=>{
-    //     alert("Updated successfully")
-    //   },
-    //   (error:any)=>{
-    //     alert("Not updated...?")
-    //   }
-    // )
-  }
+  //   // this._accountsService.updateAcountService(this.id,this.updatedAccount).subscribe(
+  //   //   (data:any)=>{
+  //   //     alert("Updated successfully")
+  //   //   },
+  //   //   (error:any)=>{
+  //   //     alert("Not updated...?")
+  //   //   }
+  //   // )
+  // }
 
 }
