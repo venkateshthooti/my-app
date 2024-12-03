@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class StudentIdCardService {
+
+  baseUrl:String="https://6128991386a213001729f9df.mockapi.io/test/v1/student"
   constructor(private _httpClient: HttpClient) {}
 
   getAllstudents(): Observable<any> {
@@ -49,5 +51,12 @@ export class StudentIdCardService {
       'https://6128991386a213001729f9df.mockapi.io/test/v1/student',
       studenIdCardForm
     );
+  }
+
+  getSingleStudentIdCard(id:string):Observable<any>{
+    return this._httpClient.get(this.baseUrl+'/'+id)
+  }
+  updateStudentidCrad(id:string,data:any){
+    return this._httpClient.put(this.baseUrl+'/'+id,data)
   }
 }

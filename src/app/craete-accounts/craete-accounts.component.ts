@@ -55,6 +55,7 @@ export class CraeteAccountsComponent {
     if(this.uniqueID){
       this._accountsService.updateAccount(this.uniqueID,this.accountForm.value).subscribe(
         (data:any)=>{
+          console.log(data)
           alert("updated successfully")
         },
         (err:any)=>{

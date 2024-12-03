@@ -59,6 +59,7 @@ export class StudentIdCardComponent {
       this._studentIdCardService.deleteService(id).subscribe(
         (data: any) => {
           alert('Deleted Successfully...!');
+          location.reload()
         },
         (error: any) => {
           alert('Deletion failed...??');
@@ -76,7 +77,5 @@ export class StudentIdCardComponent {
       }
     )
   }
-  edit(){
-    alert("hi")
-  }
+
 }

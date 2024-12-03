@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AccountsService {
-
+  updatedValues:any=[]
+  
   baseUrl:string="https://6128991386a213001729f9df.mockapi.io/test/v1/principals"
   constructor(private _httpClient:HttpClient) { 
 
@@ -47,6 +48,7 @@ export class AccountsService {
 
   createPostAccountService(data:any):Observable<any>{
 
+    
    return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/principals",data)
 
   }
@@ -60,11 +62,13 @@ export class AccountsService {
     return this._httpClient.get(this.baseUrl+'/'+id);
   }
   updateAccount(id:string,data:any):Observable<any>{
-    return this._httpClient.put(this.baseUrl+'/'+id,data)
+   this.updatedValues= this._httpClient.put(this.baseUrl+'/'+id,data)
+   console.log(this.updatedValues)
+    return  this.updatedValues
   }
 
 
-
+  // this._httpClient.put(this.baseUrl+'/'+id,data)
 
 
 

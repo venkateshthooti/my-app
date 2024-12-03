@@ -1,7 +1,9 @@
 <!-- <p>create-student-id-card works!</p> -->
 
 
-<h1>Create New Student Id Card</h1>
+<h1>{{id?'Update student id card':'Create New Student Id Card'}}</h1>
+<h1 *ngIf="id">Update student id card</h1>
+<h1 *ngIf="!id">Create New Student Id Card</h1>
 
 <form [formGroup]="studenIdCardForm">
     <label for="">name:</label>
@@ -35,5 +37,5 @@
     <input type="text" formControlName="school_pin">
     <br>
 
-    <button (click)="createSudentIdComponent()" class="btn btn-warning">Submit</button>
+    <button (click)="createSudentIdComponent()" class="btn btn-warning">{{id?'Update':'Create'}}</button>
 </form>

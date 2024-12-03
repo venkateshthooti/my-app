@@ -55,6 +55,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentformComponent } from './create-studentform/create-studentform.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { StudentIdCardsDetailsComponent } from './student-id-cards-details/student-id-cards-details.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
     CreateStudentformComponent,
     VehicleDetailsComponent,
     AccountDetailsComponent,
+    StudentIdCardsDetailsComponent,
     
     
   ],

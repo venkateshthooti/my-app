@@ -36,6 +36,7 @@ import { CreateStudentformComponent } from './create-studentform/create-studentf
 import { AuthenticationGuard } from './authentication.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { StudentIdCardsDetailsComponent } from './student-id-cards-details/student-id-cards-details.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -74,7 +75,10 @@ const routes: Routes = [
   {path:'edit-vehicle/:id',component:CreateVehicleComponent},
 
   {path:'account-details/:id',component:AccountDetailsComponent},
-  {path:'update-details/:id',component:CraeteAccountsComponent}
+  {path:'update-details/:id',component:CraeteAccountsComponent},
+
+  {path:'view-student-details/:id',component:StudentIdCardsDetailsComponent},
+  {path:'update-student-deatils/:id',component:CreateStudentIdCardComponent}
 
 ]},
 
