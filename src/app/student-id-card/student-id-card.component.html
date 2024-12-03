@@ -94,8 +94,8 @@
         </div>
         <hr>
         <div class="bottom d-flex justify-content-between">
-          <button class="btn btn-primary">View</button>
-          <button class="btn btn-warning" (click)="edit()">Edit</button>
+          <button class="btn btn-primary" routerLink="/dashboard/view-student-details/{{student.id}}">View</button>
+          <button class="btn btn-warning" routerLink="/dashboard/update-student-deatils/{{student.id}}">Edit</button>
           <button (click)="deleteComponent(student.id)"  class="btn btn-danger" >Delete</button>
         </div>
       </div>

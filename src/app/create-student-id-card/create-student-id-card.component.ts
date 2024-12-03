@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { StudentIdCardService } from '../student-id-card.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-student-id-card',
@@ -11,8 +12,20 @@ import { StudentIdCardService } from '../student-id-card.service';
 })
 export class CreateStudentIdCardComponent {
 
+  id:string=""
   
-  constructor(private _studentIdCardService:StudentIdCardService){
+  constructor(private _studentIdCardService:StudentIdCardService, _activatedRoute:ActivatedRoute){
+    _activatedRoute.params.subscribe(
+      (data:any)=>{
+        this.id=data.id
+        _studentIdCardService.getSingleStudentIdCard(data.id).subscribe(
+          (data:any)=>{
+            this.studenIdCardForm.patchValue(data)
+          }
+        )
+      }
+    )
+
   
   }
 
@@ -33,15 +46,28 @@ export class CreateStudentIdCardComponent {
 
   createSudentIdComponent(){
     console.log(this.studenIdCardForm)
-    this._studentIdCardService.createStudentIdservice(this.studenIdCardForm.value).subscribe(
-      (data:any)=>{
-        alert("New id card creation successfull....!")
-      },
-      (err:any)=>{
-        alert("Creation failed")
-      }
-    )
-  }
 
+    if(this.id){
+      this._studentIdCardService.updateStudentidCrad(this.id,this.studenIdCardForm.value).subscribe(
+        (data:any)=>{
+          alert("updated successfully...")
+        },
+        (err:any)=>{
+          alert("updation failed")
+        }
+      )
+    }
+    else{
+      this._studentIdCardService.createStudentIdservice(this.studenIdCardForm.value).subscribe(
+        (data:any)=>{
+          alert("New id card creation successfull....!")
+        },
+        (err:any)=>{
+          alert("Creation failed")
+        }
+      )
+    }
+
+    }
 
 }
