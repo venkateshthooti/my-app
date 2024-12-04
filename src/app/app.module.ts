@@ -56,6 +56,12 @@ import { CreateStudentformComponent } from './create-studentform/create-studentf
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { StudentIdCardsDetailsComponent } from './student-id-cards-details/student-id-cards-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +102,12 @@ import { StudentIdCardsDetailsComponent } from './student-id-cards-details/stude
     VehicleDetailsComponent,
     AccountDetailsComponent,
     StudentIdCardsDetailsComponent,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent,
+    SiblingsComponent,
+    Sibling1Component,
+    Sibling2Component,
     
     
   ],
