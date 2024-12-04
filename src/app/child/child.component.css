@@ -1,0 +1,17 @@
+.textareaDiv{
+    width: 200px;
+    height: 100px;
+    position: relative; 
+
+}
+.textArea{
+    width: 100%;
+    height: 100%;
+    
+}
+.liveAndTotalChars{
+   
+    position: absolute;
+    right: 3px;
+    bottom:3px;
+}
