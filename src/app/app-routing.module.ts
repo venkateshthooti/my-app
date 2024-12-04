@@ -37,6 +37,8 @@ import { AuthenticationGuard } from './authentication.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { StudentIdCardsDetailsComponent } from './student-id-cards-details/student-id-cards-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { SiblingsComponent } from './siblings/siblings.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -78,7 +80,10 @@ const routes: Routes = [
   {path:'update-details/:id',component:CraeteAccountsComponent},
 
   {path:'view-student-details/:id',component:StudentIdCardsDetailsComponent},
-  {path:'update-student-deatils/:id',component:CreateStudentIdCardComponent}
+  {path:'update-student-deatils/:id',component:CreateStudentIdCardComponent},
+
+  {path:'parent',component:ParentComponent},
+  {path:'siblings',component:SiblingsComponent}
 
 ]},
 

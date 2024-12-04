@@ -9,7 +9,9 @@
       height="200px"
     />
     <div class="rating">
-      <span >{{ product.rating.rate }}</span>
+
+      <app-rating [rating]="product.rating.rate"></app-rating>
+      <!-- <span >{{ product.rating.rate }}</span> -->
     </div>
     <h4 class="category">{{ product.category }}</h4>
     <p class="title">
