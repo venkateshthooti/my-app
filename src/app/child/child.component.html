@@ -1,4 +1,10 @@
-<p>child works! {{a}}</p>
+<p>child works! {{ a }}</p>
 
+<button (click)="send()">Submit</button><br /><br />
 
-<button (click)="send()">Submit</button>
+<div class="textareaDiv">
+  <textarea class="textArea" id="" [maxlength]="max" [(ngModel)]="text" width="">gweiw</textarea>
+  <div class="liveAndTotalChars">{{ text.length }}/{{ max }}</div>
+  
+</div>
+
