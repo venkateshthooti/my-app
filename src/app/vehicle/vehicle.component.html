@@ -61,7 +61,7 @@
       <td class="align-middle text-center">
         <img src="{{ vehicle.image }}" alt="" width="50px" height="50px"/>
       </td >
-      <td class="align-middle text-center">{{ vehicle.cost }}</td>
+      <td class="align-middle text-center">{{ vehicle.cost | price}}</td>
       <td class="align-middle text-center">{{ vehicle.id }}</td>
       <td class="align-middle d-flex">
         <button class="btn btn-danger " (click)="delete(vehicle.id)">Delete</button>
