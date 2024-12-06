@@ -20,7 +20,7 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EmployeeComponent } from './employee/employee.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AccountsComponent } from './accounts/accounts.component';
 import { AmazonComponent } from './amazon/amazon.component';
 import { MailComponent } from './mail/mail.component';
@@ -64,6 +64,8 @@ import { Sibling1Component } from './sibling1/sibling1.component';
 import { Sibling2Component } from './sibling2/sibling2.component';
 import { PricePipe } from './price.pipe';
 import { CapitalDirective } from './capital.directive';
+import { TokenInterceptor } from './token.interceptor';
+import { AboutUsModule } from './about-us/about-us.module';
 
 @NgModule({
   declarations: [
@@ -122,6 +124,7 @@ import { CapitalDirective } from './capital.directive';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    AboutUsModule,
 
     MatSlideToggleModule,
     MatSliderModule,
@@ -137,9 +140,17 @@ import { CapitalDirective } from './capital.directive';
     MatDividerModule,
     MatExpansionModule,
     MatTableModule,
+
+
   
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
